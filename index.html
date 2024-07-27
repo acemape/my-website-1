@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Password and Email</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .toggle-button {
+            cursor: pointer;
+            color: blue;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h2>Show Password and Email Example</h2>
+    <form>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+            <span id="toggleEmail" class="toggle-button" onclick="toggleEmailVisibility()">Show</span>
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+            <span id="togglePassword" class="toggle-button" onclick="togglePasswordVisibility()">Show</span>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        function toggleEmailVisibility() {
+            const emailField = document.getElementById('email');
+            const toggleEmailButton = document.getElementById('toggleEmail');
+            if (emailField.type === 'password') {
+                emailField.type = 'text';
+                toggleEmailButton.textContent = 'Hide';
+            } else {
+                emailField.type = 'password';
+                toggleEmailButton.textContent = 'Show';
+            }
+        }
+
+        function togglePasswordVisibility() {
+            const passwordField = document.getElementById('password');
+            const togglePasswordButton = document.getElementById('togglePassword');
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                togglePasswordButton.textContent = 'Hide';
+            } else {
+                passwordField.type = 'password';
+                togglePasswordButton.textContent = 'Show';
+            }
+        }
+    </script>
+</body>
+</html>
